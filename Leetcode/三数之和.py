@@ -7,35 +7,43 @@
 
 import os
 
-class Solution:
-	def threeSum(self, nums):
-		ans = []
-		if not nums:
-			return None
-		nums.sort()
-		# 保证三数之和为 0
+class Solution(object):
+    def threeSum(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[List[int]]
+        """
+        if not nums and len(nums) < 3:
+            return []
+        nums = sorted(nums)
+        left = 0 
+        ans_list = []
 
-		for left in range(0,len(nums)-2):
-			if left > 0 and nums[left - 1] == nums[left]:
-				continue
-			mid = left + 1
-			right = len(nums) - 1
-			while mid < right :
-				tem = 0 - nums[left]
-				if nums[right] + nums[mid] == tem:
-					ans.append([nums[left],nums[mid],nums[right]])
-					tem_mid = nums[mid]
-					tem_right = nums[right]
-					while mid < right and nums[mid] == tem_mid:
-						mid += 1
-					while right > mid and nums[right] == tem_right:
-						right -= 1
-				elif nums[right] + nums[mid] < tem:
-					mid += 1
-				elif nums[right] + nums[mid] > tem:
-					right -= 1
-
-		return ans
+        while left < len(nums) - 2:
+            if left != 0 and nums[left] == nums[left - 1]:
+                left += 1
+                continue
+            target = 0 - nums[left]
+            mid = left + 1
+            right = len(nums) - 1
+            while mid < right:
+                if nums[mid] + nums[right] == target:
+                    ans_list.append([nums[left],nums[mid],nums[right]])
+                    tem_mid = mid 
+                    tem_right = right
+                    # 在恰好找到一个合适的序列后，mid 与 right 都要进行移动
+                    # 这里将 mid 移到不重复的第一个点
+                    # 将 right 同样移动到不重复的第一个点
+                    # mid 值不变，right 值变是不可能的答案，所以不需要考虑
+                    while mid < right and nums[mid] == nums[tem_mid]:
+                        mid += 1
+                    while mid < right and nums[right] == nums[tem_right]:
+                        right -= 1
+                elif nums[mid] + nums[right] > target:
+                    right -= 1
+                elif nums[mid] + nums[right] < target:
+                    mid += 1
+            left += 1
 s = Solution()
 print(s.threeSum([-1, 0, 1, 2, -1, -4]))
 
