@@ -21,8 +21,10 @@ class Solution(object):
                 res[vowel[term]] ^= 1
             dic[tuple(res)] = length
         # (0,0,0,0,0)表示从零开始的子串最大长度 - 1
+        print(dic)
         res = [0,0,0,0,0]
         ans = dic[tuple(res)] + 1
+        print(dic)
         for length, term in enumerate(s):
             if term in vowel:
                 res[vowel[term]] ^= 1
@@ -33,6 +35,6 @@ class Solution(object):
 
 
 s = Solution()
-print(s.findTheLongestSubstring("i"))
+print(s.findTheLongestSubstring("eleetminicoworoep"))
 
 
