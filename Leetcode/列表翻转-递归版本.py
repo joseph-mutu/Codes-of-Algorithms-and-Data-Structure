@@ -7,11 +7,32 @@
 
 import os
 
+class ListNode(object):
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+
 class Solution():
-	def reverseList(self, head):
-		if not head or not head.next:
-			return head
-		right = self.reverseList(head.next)
-		head.next.next = head
-		head.next = None
-		return right
+    def reverseList(self, head):
+        if not head or not head.next:
+            return head
+        right = self.reverseList(head.next)
+        print(right.val)
+        head.next.next = head
+        head.next = None
+        return right
+head = ListNode(1)
+node1 = ListNode(2)
+node2 = ListNode(3)
+node3 = ListNode(4)
+node4 = ListNode(5)
+head.next = node1
+node1.next = node2
+node2.next = node3
+node3.next = node4
+
+s = Solution()
+head = s.reverseList(head)
+# while head:
+#     print(head.val)
+#     head = head.next
