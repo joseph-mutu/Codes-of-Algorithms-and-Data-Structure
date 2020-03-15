@@ -33,17 +33,6 @@ class Solution:
                 node_list.append((word,length + 1))
                 visited.add(word)
         return 0
-        # queue = collections.deque([(beginWord, 1)])
-        # visited = set()
-
-        # while queue:
-        #     word, dist = queue.popleft()
-        #     if word == endWord:
-        #         return dist
-        #     for nextWord in generate_children(word, visited):
-        #         queue.append((nextWord, dist + 1))
-        #         visited.add(nextWord)
-        # return 0
 
 
 
