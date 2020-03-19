@@ -37,7 +37,6 @@ class Solution(object):
         print(start,end,pivot)
         left = start
         right = end
-
         while 1:
             while nums[left] < pivot:
                 left += 1

@@ -29,7 +29,6 @@ class Solution(object):
         heap.insert(0,float('-inf'))
         # find the last parent
         last = (len(arr) - 1)//2
-
         for parent in range(last,0,-1):
             while parent * 2 < len(heap):
                 child = parent * 2
