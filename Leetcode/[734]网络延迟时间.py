@@ -17,7 +17,6 @@ class Solution(object):
             graph[x-1][y-1] = w
         dis = [float('inf') for _ in range(N)] 
         dis[K-1] = 0
-        print(graph,dis)
         # 对源点周围的点进行初始化
         for i in range(N):
             if graph[K-1][i] >= 0:
@@ -36,7 +35,6 @@ class Solution(object):
             if node == -1 :
                 break
             collected[node] = True
-            print(node,collected,dis)
             for i in range(N):
                 # 两点之间存在边,且当前邻节点没有被收录
                 if graph[node][i] >= 0 and collected[i] is False:
