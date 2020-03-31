@@ -20,6 +20,7 @@ class Solution(object):
                     print(i,j,s[j:i])
                     dp[i] = True
                     break
+        print(dp)
         return dp[-1]
 s = Solution()
 print(s.wordBreak(s = "leetcode", wordDict = ["leet", "code"]))

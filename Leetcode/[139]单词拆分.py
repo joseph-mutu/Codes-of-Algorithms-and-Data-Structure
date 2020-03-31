@@ -19,10 +19,12 @@ class Solution(object):
         return False
 
     def word_check(self,s,wordDict,start,is_separable):
+        print(start,is_separable)
         if start == len(s):
             return True
         if is_separable[start] != -1:
             return is_separable[start]
+
         # 将字符串按照 start 分为两部分
         for i in range(start + 1,len(s)+1):
             #只有当第一个部分存在于 worddict 中时，才去查找第二部分
@@ -33,4 +35,8 @@ class Solution(object):
         return False
 
 s = Solution()
-print(s.wordBreak(s = "leetcode", wordDict = ["leet", "code"]))
+x = "aaaab"
+dic = ["a","aa","aaa","aaaa"]
+s = Solution()
+print(s.wordBreak(x,dic))
+# print(s.wordBreak(s = "leetcode", wordDict = ["leet", "code"]))

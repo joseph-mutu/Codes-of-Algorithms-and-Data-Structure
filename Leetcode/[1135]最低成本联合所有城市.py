@@ -15,8 +15,6 @@ class Solution(object):
             return -1
         # Prime 算法 + 堆优化
         cost = 0
-        edge_count = 0
-
         # 节点距离当前树的距离
         collected = set()
 
