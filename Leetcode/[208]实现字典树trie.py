@@ -64,15 +64,16 @@ class Trie:
 trie = Trie()
 
 trie.insert("apple")
-print(trie.search("apple"))
-# // returns true
-print(trie.search("app"))
-# // returns false
-print(trie.startsWith("app"))
-# // returns true
-print(trie.insert("app"))   
-print(trie.search("app"))     
-# // returns true
+print(trie.root.keys())
+# print(trie.search("apple"))
+# # // returns true
+# print(trie.search("app"))
+# # // returns false
+# print(trie.startsWith("app"))
+# # // returns true
+# print(trie.insert("app"))   
+# print(trie.search("app"))     
+# # // returns true
 
 
  
