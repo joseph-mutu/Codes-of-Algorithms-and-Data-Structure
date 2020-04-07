@@ -42,6 +42,7 @@ class NumArray:
 
         sum_end = 0
         while end > 0:
+            print(end)
             sum_end += self.ft[end]
             end -= self.lowbit(end)
 
