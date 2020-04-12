@@ -18,8 +18,7 @@ class Solution:
         nrow = len(matrix)
         ncol = len(matrix[0])
         
-        #每一列能达到的高度
-        height = [0] * ncol
+        #每一列能达到的高度s
         # #每一列能向左扩充的最大边界
         left = [-1] * ncol
         # 每一列能向右扩充的最大边界
@@ -50,11 +49,8 @@ class Solution:
                     right[col] = ncol
                 else:
                     right[col] = min(right_border,right[col])
-            print(left,right,height)
             for col in range(ncol):
                 max_area = max(max_area,height[col] * (right[col] - left[col] - 1))
-                print(height[col] * (right[col] - left[col] - 1))
-            print('*'*20)
 
 
         return max_area
